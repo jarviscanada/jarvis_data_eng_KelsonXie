@@ -1,0 +1,122 @@
+{
+  "education": [
+    {
+      "awards_achievements": null,
+      "degree": "Bachelor of Science (BSc)",
+      "department": "The Department of Computer and Mathematical Sciences",
+      "duration": "2017-2022",
+      "school_name": "University of Toronto"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_KelsonXie",
+  "highlighted_projects": [
+    {
+      "description": "Built end-to-end pipeline using Airflow and Docker to pull match history into PostgreSQL.\nAnalyzed data in PGAdmin and visualized KPIs with Metabase dashboards.\nDelivered insights on player performance, role efficiency and champion usage.\n",
+      "name": "Data Pipeline for League of Legends Match History"
+    },
+    {
+      "description": "Ingested Olympics data into Azure Data Lake Gen 2 using Azure Data Factory.\nPerformed quality checks and transformations in Databricks.\nCreated reports in Azure Synapse Analytics.\n",
+      "name": "Azure Olympics Data Pipeline"
+    },
+    {
+      "description": "Built a pipeline in Apache Airflow run on a Docker container to collect GitHub and HackerNews data.\nStored in Google BigQuery and analyzed correlations between project activity and news coverage.\n",
+      "name": "GitHub and HackerNews Data Pipeline"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Developed a monitoring script that records hardware specifications and resource usage across Linux clusters and stores the data in a PostgreSQL database. Implemented the script in Bash and scheduled cron jobs to trigger data collection at regular intervals, with data stored locally in a PostgreSQL database running in a Docker container.",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": "Created a Java program that mimics the Linux grep command by searching for matching strings across directories and saving the results to an output file. Used Maven for build automation and project management, and implemented logging with a logger and basic configuration to support testing and debugging.",
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
+    },
+    {
+      "description": "",
+      "git_url": "/springboot",
+      "name": "Springboot App"
+    },
+    {
+      "description": "",
+      "git_url": "/python_data_anlytics",
+      "name": "Python Data Analytics"
+    },
+    {
+      "description": "",
+      "git_url": "/hadoop",
+      "name": "Hadoop"
+    },
+    {
+      "description": "",
+      "git_url": "/spark",
+      "name": "Spark"
+    },
+    {
+      "description": "",
+      "git_url": "/cloud_devops",
+      "name": "Cloud/DevOps"
+    }
+  ],
+  "name": "Kelson Xie",
+  "others": [
+    {
+      "bullets": [
+        "Loves going to the gym",
+        "Yu-gi-oh player"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Developed data engineering projects including a Linux cluster monitoring solution and core Java applications, applying SQL, Bash, Docker, Git, and Agile practices. Focused on building reliable automation, improving data quality, validating outputs, and documenting deliverables in a clean, maintainable way.\n",
+      "duration": "Nov 2025-present",
+      "title": "Data Engineer"
+    },
+    {
+      "company": "Util-Assist",
+      "description": "Engineered and maintained Snowflake pipelines handling terabytes of data across millions of rows and hundreds of columns, ensuring daily ingestion and transformation at scale.\nExecuted 200+ data quality and functional tests across 18 databases and 5 Power BI reports, identifying duplicates, outliers, and inconsistencies that improved reporting accuracy and query efficiency.\nReduced storage costs and optimized Power BI query performance by cleaning bad data and eliminating inefficient functions, contributing to six-figure overhead savings.\nDeveloped advanced SQL and Python scripts for anomaly detection, improving data integrity by 30% and accelerating dashboard delivery cycles.\n",
+      "duration": "Aug 2023 - Jan 2025",
+      "title": "Test Data Analyst"
+    },
+    {
+      "company": "IBM",
+      "description": "Created 75+ automation tasks and suites in Java using Selenium, cutting regression cycles from 2 weeks to 1 week and halving sprint delivery timelines.\nPartnered with cross-functional interns to design universal setup frameworks for feature testing, streamlining edge-case coverage and sprint execution.\n",
+      "duration": "May 2020 - Aug 2021",
+      "title": "Automation Engineer Intern"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "Microsoft Azure",
+      "Google Cloud Platform",
+      "ETL Development",
+      "Data Modeling",
+      "Data Analytics"
+    ],
+    "familiar": [
+      "DataBricks",
+      "Amazon Web Services",
+      "Power BI",
+      "Data Warehousing",
+      "Database Management"
+    ],
+    "proficient": [
+      "Java",
+      "Python",
+      "Linux/Bash",
+      "RDBMS/SQL",
+      "Apache Airflow",
+      "Agile/Scrum",
+      "Git",
+      "Docker",
+      "Snowflake",
+      "Data Validation"
+    ]
+  },
+  "summary": "A data-driven software professional with 4 years of experience planning, building, and testing scalable data pipelines, ETL workflows, and analytics solutions. Enthusiastic about modern data technologies such as Snowflake, Databricks, Apache Airflow, Docker, and cloud data platforms. Excited to bring a fresh perspective to the software industry by turning complex, messy data into reliable systems and meaningful insights that directly impact business decisions. Passionate about building robust, efficient software, continuously learning new technologies, and contributing to products that scale, automate, and create real-world value."
+}
