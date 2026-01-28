@@ -30,34 +30,14 @@
       "name": "Cluster Monitor"
     },
     {
-      "description": "Created a Java program that mimics the Linux grep command by searching for matching strings across directories and saving the results to an output file. Used Maven for build automation and project management, and implemented logging with a logger and basic configuration to support testing and debugging.",
+      "description": "Created a Java program that mimics the Linux grep command by searching for matching strings across directories and saving the results to an output file. Used Maven for build automation and project management, and implemented logging with a logger and basic configuration to support testing and debugging. Set up streaming to improve efficiency of handling larger files.",
       "git_url": "/core_java",
       "name": "Core Java Apps"
     },
     {
-      "description": "",
-      "git_url": "/springboot",
-      "name": "Springboot App"
-    },
-    {
-      "description": "",
-      "git_url": "/python_data_anlytics",
+      "description": "Built an end-to-end data analytics project in Jupyter using Python, Pandas, SQL, and Docker to analyze e-commerce and personal finance datasets. Designed data ingestion pipelines from PostgreSQL and CSV sources, performed data cleaning, type casting, and feature engineering. Implemented exploratory data analysis and business KPIs including monthly revenue trends, growth rates, new vs. existing customers, and RFM visualizations.",
+      "git_url": "/python_data_analytics",
       "name": "Python Data Analytics"
-    },
-    {
-      "description": "",
-      "git_url": "/hadoop",
-      "name": "Hadoop"
-    },
-    {
-      "description": "",
-      "git_url": "/spark",
-      "name": "Spark"
-    },
-    {
-      "description": "",
-      "git_url": "/cloud_devops",
-      "name": "Cloud/DevOps"
     }
   ],
   "name": "Kelson Xie",
