@@ -1,0 +1,65 @@
+.course-info-card {
+    background: #f3f6f9;
+    border: 1px solid #dddbda;
+    border-radius: 8px;
+    padding: 0.75rem;
+}
+
+.course-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.course-info-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    color: #706e6b;
+    margin-bottom: 2px;
+}
+
+.info-value {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #032d60;
+}
+
+/* Teacher spans full width */
+.course-info-field:last-child {
+    grid-column: 1 / -1;
+}
+
+.enroll-btn {
+    width: 100%;
+}
+
+.success-box {
+    background: #eaf5ea;
+    border: 1px solid #2e844a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 2rem;
+    color: #2e844a;
+    margin-bottom: 0.5rem;
+}
+
+.success-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2e844a;
+    margin: 0 0 0.25rem 0;
+}
+
+.success-message {
+    font-size: 0.9rem;
+    color: #444;
+    margin: 0;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tenure_Status__c</fullName>
+    <label>Tenure Status</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tenured</fullName>
+                <default>true</default>
+                <label>Tenured</label>
+            </value>
+            <value>
+                <fullName>Non-Tenured</fullName>
+                <default>false</default>
+                <label>Non-Tenured</label>
+            </value>
+            <value>
+                <fullName>Probationary</fullName>
+                <default>false</default>
+                <label>Probationary</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

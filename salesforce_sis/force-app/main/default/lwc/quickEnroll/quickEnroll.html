@@ -1,0 +1,81 @@
+<template>
+    <lightning-card title="Quick Enroll" icon-name="standard:add">
+        <div class="slds-m-around_small">
+            <template if:false={showSuccess}>
+                <div class="slds-grid slds-gutters slds-wrap">
+
+                    <!-- Course Dropdown -->
+                    <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+                        <lightning-combobox
+                            label="Select Course"
+                            placeholder="Choose a course..."
+                            value={selectedCourseId}
+                            options={courseOptions}
+                            onchange={handleCourseChange}>
+                        </lightning-combobox>
+                    </div>
+
+                    <!-- Course Info Card -->
+                    <template if:true={selectedCourse}>
+                        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+                            <div class="course-info-card">
+                                <div class="course-info-grid">
+                                    <div class="course-info-field">
+                                        <span class="info-label">Department</span>
+                                        <span class="info-value">{selectedCourse.Department__c}</span>
+                                    </div>
+                                    <div class="course-info-field">
+                                        <span class="info-label">Credits</span>
+                                        <span class="info-value">{selectedCourse.Credits__c}</span>
+                                    </div>
+                                    <div class="course-info-field">
+                                        <span class="info-label">Teacher</span>
+                                        <span class="info-value">{selectedCourse.teacherName}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Term Dropdown -->
+                    <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                        <lightning-combobox
+                            label="Term"
+                            placeholder="Select term..."
+                            value={selectedTerm}
+                            options={termOptions}
+                            onchange={handleTermChange}>
+                        </lightning-combobox>
+                    </div>
+
+                    <!-- Enroll Button - full width on mobile -->
+                    <div class="slds-col slds-size_1-of-1">
+                        <lightning-button
+                            variant="brand"
+                            label="Enroll Student"
+                            class="enroll-btn"
+                            onclick={handleEnroll}
+                            disabled={isEnrollDisabled}>
+                        </lightning-button>
+                    </div>
+
+                </div>
+            </template>
+
+            <!-- Success Message -->
+            <template if:true={showSuccess}>
+                <div class="success-box">
+                    <div class="success-icon">✓</div>
+                    <p class="success-title">Enrollment Successful!</p>
+                    <p class="success-message">{successMessage}</p>
+                    <lightning-button
+                        label="Enroll in Another Course"
+                        variant="neutral"
+                        class="enroll-btn slds-m-top_small"
+                        onclick={resetForm}>
+                    </lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,64 @@
+<template>
+    <lightning-card title="Enrolled Students" icon-name="standard:people">
+        <div class="slds-m-around_small">
+            <template if:true={tableData}>
+
+                <!-- Summary bar -->
+                <div class="summary-bar slds-m-bottom_small">
+                    <span class="summary-item">
+                        <span class="summary-label">Total Enrolled</span>
+                        <span class="summary-value">{totalEnrolled}</span>
+                    </span>
+                    <span class="summary-item">
+                        <span class="summary-label">Completed</span>
+                        <span class="summary-value">{totalCompleted}</span>
+                    </span>
+                    <span class="summary-item">
+                        <span class="summary-label">Avg Grade</span>
+                        <span class="summary-value">{averageGrade}</span>
+                    </span>
+                </div>
+
+                <!-- Desktop table -->
+                <template if:false={isMobile}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={tableData}
+                        columns={columns}
+                        hide-checkbox-column>
+                    </lightning-datatable>
+                </template>
+
+                <!-- Mobile cards -->
+                <template if:true={isMobile}>
+                    <template for:each={tableData} for:item="row">
+                        <div key={row.Id} class="mobile-card slds-m-bottom_small">
+                            <div class="mobile-card-header">
+                                <span class="mobile-student-name">{row.studentName}</span>
+                                <span class="mobile-grade">{row.Letter_Grade__c}</span>
+                            </div>
+                            <div class="mobile-card-body">
+                                <div class="mobile-field">
+                                    <span class="mobile-label">Term</span>
+                                    <span>{row.Term__c}</span>
+                                </div>
+                                <div class="mobile-field">
+                                    <span class="mobile-label">Grade Points</span>
+                                    <span>{row.Grade_Points__c}</span>
+                                </div>
+                                <div class="mobile-field">
+                                    <span class="mobile-label">Status</span>
+                                    <span class={row.statusClass}>{row.Status__c}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+
+            </template>
+            <template if:false={tableData}>
+                <p class="slds-text-color_weak">No students enrolled in this course.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

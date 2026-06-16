@@ -1,0 +1,84 @@
+.course-section {
+    border: 1px solid #dddbda;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #032d60;
+    padding: 0.75rem 1rem;
+}
+
+.course-code {
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+}
+
+.student-count {
+    font-size: 0.8rem;
+    color: #c9d9f0;
+    background: rgba(255,255,255,0.15);
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.mobile-card {
+    background: white;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin: 0.5rem;
+}
+
+.mobile-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.mobile-student-name {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #032d60;
+}
+
+.mobile-grade {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #0070d2;
+}
+
+.mobile-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.mobile-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-label {
+    font-size: 0.75rem;
+    color: #706e6b;
+    margin-bottom: 2px;
+}
+
+.mobile-email {
+    font-size: 0.8rem;
+    color: #0070d2;
+    word-break: break-all;
+}
+
+.status-enrolled { color: #2e844a; font-weight: bold; font-size: 0.85rem; }
+.status-completed { color: #0070d2; font-weight: bold; font-size: 0.85rem; }
+.status-withdrawn { color: #c23934; font-weight: bold; font-size: 0.85rem; }
+.status-incomplete { color: #dd7a01; font-weight: bold; font-size: 0.85rem; }

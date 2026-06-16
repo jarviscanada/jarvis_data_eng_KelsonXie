@@ -1,0 +1,84 @@
+<template>
+    <lightning-card title="Course & Grades" icon-name="standard:education">
+        <div class="slds-m-around_small">
+            <template if:true={tableData}>
+                <!-- Desktop view -->
+                <template if:false={isMobile}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={tableData}
+                        columns={columns}
+                        hide-checkbox-column
+                        onrowaction={handleRowAction}>
+                    </lightning-datatable>
+                </template>
+
+                <!-- Mobile view -->
+                <template if:true={isMobile}>
+                    <template for:each={tableData} for:item="row">
+                        <div key={row.Id} class="mobile-card slds-m-bottom_small">
+                            <div class="mobile-card-header">
+                                <span class="mobile-course-name">{row.Name}</span>
+                                <span class={row.statusClass}>{row.Status__c}</span>
+                            </div>
+                            <div class="mobile-card-body">
+                                <div class="mobile-field">
+                                    <span class="mobile-label">Term</span>
+                                    <span>{row.Term__c}</span>
+                                </div>
+                                <div class="mobile-field">
+                                    <span class="mobile-label">Grade Points</span>
+                                    <span>{row.Grade_Points__c}</span>
+                                </div>
+                                <div class="mobile-field">
+                                    <span class="mobile-label">Letter Grade</span>
+                                    <span class="mobile-grade">{row.Letter_Grade__c}</span>
+                                </div>
+                            </div>
+                            <div class="mobile-card-footer">
+                                <lightning-button
+                                    label="Edit"
+                                    size="small"
+                                    onclick={handleMobileEdit}
+                                    data-id={row.Id}
+                                    data-grade={row.Grade_Points__c}
+                                    data-status={row.Status__c}>
+                                </lightning-button>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </template>
+
+            <!-- Edit Modal -->
+            <template if:true={isModalOpen}>
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <h2 class="slds-text-heading_medium">Edit Enrollment</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <lightning-input
+                                label="Grade Points"
+                                type="number"
+                                value={selectedGradePoints}
+                                onchange={handleGradeChange}>
+                            </lightning-input>
+                            <lightning-combobox
+                                label="Status"
+                                value={selectedStatus}
+                                options={statusOptions}
+                                onchange={handleStatusChange}>
+                            </lightning-combobox>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+                            <lightning-button variant="brand" label="Save" onclick={saveEnrollment}></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

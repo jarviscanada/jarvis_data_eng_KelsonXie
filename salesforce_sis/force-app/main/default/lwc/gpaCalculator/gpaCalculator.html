@@ -1,0 +1,73 @@
+<template>
+    <lightning-card title="GPA Calculator" icon-name="standard:metrics">
+        <div class="slds-m-around_small">
+
+            <!-- GPA Circle and Stats -->
+            <div class="slds-grid slds-gutters slds-wrap slds-m-bottom_medium">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-text-align_center slds-m-bottom_small">
+                    <div class="gpa-circle">
+                        <p class="gpa-value">{gpa}</p>
+                        <p class="gpa-label">Current GPA</p>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <div class="slds-box stat-box slds-m-bottom_x-small">
+                        <p><strong>Total Courses:</strong> {totalCourses}</p>
+                    </div>
+                    <div class="slds-box stat-box slds-m-bottom_x-small">
+                        <p><strong>Completed:</strong> {completedCourses}</p>
+                    </div>
+                    <div class="slds-box stat-box slds-m-bottom_x-small">
+                        <p><strong>Credits Earned:</strong> {totalCredits}</p>
+                    </div>
+                    <div class="slds-box stat-box">
+                        <p><strong>Standing:</strong> <span class={standingClass}>{standing}</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop table -->
+            <template if:false={isMobile}>
+                <template if:true={tableData.length}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={tableData}
+                        columns={columns}
+                        hide-checkbox-column>
+                    </lightning-datatable>
+                </template>
+            </template>
+
+            <!-- Mobile cards -->
+            <template if:true={isMobile}>
+                <template for:each={tableData} for:item="row">
+                    <div key={row.Id} class="mobile-card slds-m-bottom_small">
+                        <div class="mobile-card-header">
+                            <span class="mobile-course-name">{row.courseName}</span>
+                            <span class="mobile-grade">{row.Letter_Grade__c}</span>
+                        </div>
+                        <div class="mobile-card-body">
+                            <div class="mobile-field">
+                                <span class="mobile-label">Term</span>
+                                <span>{row.Term__c}</span>
+                            </div>
+                            <div class="mobile-field">
+                                <span class="mobile-label">Credits</span>
+                                <span>{row.credits}</span>
+                            </div>
+                            <div class="mobile-field">
+                                <span class="mobile-label">Grade Points</span>
+                                <span>{row.Grade_Points__c}</span>
+                            </div>
+                            <div class="mobile-field">
+                                <span class="mobile-label">Status</span>
+                                <span>{row.Status__c}</span>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,76 @@
+<template>
+    <lightning-card title="My Courses & Students" icon-name="standard:contact">
+        <div class="slds-m-around_small">
+            <template if:true={courses}>
+                <template for:each={courses} for:item="course">
+                    <div key={course.Id} class="course-section slds-m-bottom_medium">
+
+                        <!-- Course Header -->
+                        <div class="course-header">
+                            <div class="course-title">
+                                <span class="course-code">{course.Name}</span>
+                            </div>
+                            <div class="course-meta">
+                                <span class="student-count">{course.students.length} Students</span>
+                            </div>
+                        </div>
+
+                        <!-- Desktop table -->
+                        <template if:false={isMobile}>
+                            <template if:true={course.students.length}>
+                                <lightning-datatable
+                                    key-field="Id"
+                                    data={course.students}
+                                    columns={studentColumns}
+                                    hide-checkbox-column>
+                                </lightning-datatable>
+                            </template>
+                            <template if:false={course.students.length}>
+                                <p class="slds-text-color_weak slds-m-around_small">No students enrolled.</p>
+                            </template>
+                        </template>
+
+                        <!-- Mobile cards -->
+                        <template if:true={isMobile}>
+                            <template if:true={course.students.length}>
+                                <template for:each={course.students} for:item="student">
+                                    <div key={student.Id} class="mobile-card slds-m-bottom_small">
+                                        <div class="mobile-card-header">
+                                            <span class="mobile-student-name">{student.studentName}</span>
+                                            <span class="mobile-grade">{student.letterGrade}</span>
+                                        </div>
+                                        <div class="mobile-card-body">
+                                            <div class="mobile-field">
+                                                <span class="mobile-label">Email</span>
+                                                <span class="mobile-email">{student.studentEmail}</span>
+                                            </div>
+                                            <div class="mobile-field">
+                                                <span class="mobile-label">Term</span>
+                                                <span>{student.term}</span>
+                                            </div>
+                                            <div class="mobile-field">
+                                                <span class="mobile-label">Grade Points</span>
+                                                <span>{student.gradePoints}</span>
+                                            </div>
+                                            <div class="mobile-field">
+                                                <span class="mobile-label">Status</span>
+                                                <span class={student.statusClass}>{student.status}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </template>
+                            <template if:false={course.students.length}>
+                                <p class="slds-text-color_weak slds-m-around_small">No students enrolled.</p>
+                            </template>
+                        </template>
+
+                    </div>
+                </template>
+            </template>
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+        </div>
+    </lightning-card>
+</template>

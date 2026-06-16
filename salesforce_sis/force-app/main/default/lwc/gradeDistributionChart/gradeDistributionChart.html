@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Grade Distribution" icon-name="standard:metrics">
+        <div class="slds-m-around_small">
+            <template if:true={chartData}>
+
+                <!-- Summary bar -->
+                <div class="summary-bar slds-m-bottom_medium">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Students</span>
+                        <span class="summary-value">{totalStudents}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Class Average</span>
+                        <span class="summary-value">{classAverage}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Top Grade</span>
+                        <span class="summary-value">{topGrade}</span>
+                    </div>
+                </div>
+
+                <!-- Bar chart — works on both desktop and mobile -->
+                <div class="chart-container">
+                    <template for:each={chartData} for:item="bar">
+                        <div key={bar.grade} class="bar-row">
+                            <span class="grade-label">{bar.grade}</span>
+                            <div class="bar-wrapper">
+                                <div class={bar.barClass} style={bar.barStyle}>
+                                    <template if:true={bar.count}>
+                                        <span class="bar-count">{bar.count}</span>
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="bar-stats">
+                                <span class="bar-percent">{bar.percent}%</span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+            </template>
+            <template if:false={chartData}>
+                <p class="slds-text-color_weak">No grade data available.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
